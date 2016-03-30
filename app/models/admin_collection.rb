@@ -5,7 +5,8 @@ require 'hydra/datastream/non_indexed_rights_metadata'
 # require 'avalon/controlled_vocabulary'
 # require 'avalon/sanitizer'
 
-class AdminCollection < Hydra::Works::Collection
+class AdminCollection < ActiveFedora::Base
+  include Hydra::Works::CollectionBehavior
   # include Hydra::AccessControls::Permissions
   # include Hydra::ModelMixins::HybridDelegator
   # include ActiveFedora::Associations
