@@ -1,11 +1,11 @@
 
 require 'hydra/datastream/non_indexed_rights_metadata'
-require 'hydra/model_mixins/hybrid_delegator'
-require 'role_controls'
-require 'avalon/controlled_vocabulary'
-require 'avalon/sanitizer'
+# require 'hydra/model_mixins/hybrid_delegator'
+# require 'role_controls'
+# require 'avalon/controlled_vocabulary'
+# require 'avalon/sanitizer'
 
-class Admin::Collection < Hydra::Works::Collection
+class AdminCollection < Hydra::Works::Collection
   # include Hydra::AccessControls::Permissions
   # include Hydra::ModelMixins::HybridDelegator
   # include ActiveFedora::Associations
