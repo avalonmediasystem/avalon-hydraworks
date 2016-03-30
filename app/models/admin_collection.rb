@@ -21,8 +21,8 @@ class AdminCollection < Hydra::Works::Collection
   contains 'inheritedRights', class_name: 'Hydra::Datastream::InheritableRightsMetadata'
   contains 'defaultRights', class_name: 'Hydra::Datastream::NonIndexedRightsMetadata', autocreate: true
 
-  has_attributes :name, datastream: :descMetadata, multiple: false
-  has_attributes :unit, datastream: :descMetadata, multiple: false
-  has_attributes :description, datastream: :descMetadata, multiple: false
-  has_attributes :dropbox_directory_name, datastream: :descMetadata, multiple: false
+  property :name, delegate_to: :descMetadata, multiple: false
+  property :unit, delegate_to: :descMetadata, multiple: false
+  property :description, delegate_to: :descMetadata, multiple: false
+  property :dropbox_directory_name, delegate_to: :descMetadata, multiple: false
 end
