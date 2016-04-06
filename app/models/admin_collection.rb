@@ -22,8 +22,16 @@ class AdminCollection < ActiveFedora::Base
   contains 'inheritedRights', class_name: 'Hydra::Datastream::InheritableRightsMetadata'
   contains 'defaultRights', class_name: 'Hydra::Datastream::NonIndexedRightsMetadata', autocreate: true
 
-  property :name, delegate_to: :descMetadata, multiple: false
-  property :unit, delegate_to: :descMetadata, multiple: false
-  property :description, delegate_to: :descMetadata, multiple: false
-  property :dropbox_directory_name, delegate_to: :descMetadata, multiple: false
+  property :name, delegate_to: :descMetadata, multiple: false do |index|
+    index.as :facetable, type: :string
+  end
+  property :unit, delegate_to: :descMetadata, multiple: false do |index|
+    index.as :stored_searchable
+  end
+  property :description, delegate_to: :descMetadata, multiple: false do |index|
+    index.as :stored_searchable
+  end
+  property :dropbox_directory_name, delegate_to: :descMetadata, multiple: false do |index|
+    index.as :facetable, type: :string
+  end
 end
