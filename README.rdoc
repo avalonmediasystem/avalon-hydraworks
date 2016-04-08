@@ -1,8 +1,8 @@
-# Avalon Fedora 4 Conversion Testbed
+= Avalon Fedora 4 Conversion Testbed
 
 A Hydra::Works based app for testing the conversion of Avalon content from Fedora 3 to Fedora 4
 
-## Known Bugs
+== Known Bugs
 
 1. AdminCollections fail to import
 1. Relationships are local
