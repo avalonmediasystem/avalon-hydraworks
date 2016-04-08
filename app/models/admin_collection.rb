@@ -13,6 +13,7 @@ class AdminCollection < ActiveFedora::Base
   # include VersionableModel
 
   has_many :media_objects, predicate: ActiveFedora::RDF::Fcrepo::RelsExt.isMemberOfCollection
+
   contains 'descMetadata', class_name: 'ActiveFedora::SimpleDatastream' do |sds|
     sds.field :name, :string
     sds.field :unit, :string

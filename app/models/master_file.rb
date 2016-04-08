@@ -25,6 +25,9 @@ class MasterFile < ActiveFedora::Base
   # belongs_to :mediaobject, :class_name=>'MediaObject', :predicate=>ActiveFedora::RDF::Fcrepo::RelsExt.isPartOf
   # has_many :derivatives, :class_name=>'Derivative', :as=>:masterfile, :predicate=>ActiveFedora::RDF::Fcrepo::RelsExt.isDerivationOf
 
+  belongs_to :mediaobject, class_name: 'MediaObject', predicate: ActiveFedora::RDF::Fcrepo::RelsExt.isPartOf
+  has_many :derivatives, class_name: 'Derivative', as: :masterfile, predicate: ActiveFedora::RDF::Fcrepo::RelsExt.isDerivationOf
+
   contains 'descMetadata', class_name: 'ActiveFedora::SimpleDatastream' do |d|
     d.field :label, :string
     d.field :file_location, :string

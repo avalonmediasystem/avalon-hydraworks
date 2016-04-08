@@ -52,6 +52,7 @@ gem 'rsolr', '~> 1.0.6'
 gem 'globalid'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
+gem 'edtf'
 group :development, :test do
   gem 'fcrepo_wrapper'
   gem 'rspec-rails'
