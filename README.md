@@ -23,6 +23,7 @@ All of these will be fixed prior to Avalon converting of course.
 ## To Set This Tester Up
 
 1. Clone this Repo
+1. `cd avalon-hydraworks` 
 1. Run `bundle install`
 1. Open `config/fedora3.yml` and edit the yml file to point to your current Fedora 3 repo along with login information
 1. Open a new terminal window and launch the Fedora 4 wrapper `fcrepo_wrapper -p 8984`
