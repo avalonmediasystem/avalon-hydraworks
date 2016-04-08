@@ -1,8 +1,8 @@
-= Avalon Fedora 4 Conversion Tester
+# Avalon Fedora 4 Conversion Tester
 
-A Hydra Works](https://github.com/projecthydra-labs/hydra-works) based app for testing the conversion of Avalon content from Fedora 3 to Fedora 4
+A [Hydra Works](https://github.com/projecthydra-labs/hydra-works) based app for testing the conversion of Avalon content from Fedora 3 to Fedora 4
 
-== Known Bugs
+## Known Bugs
 
 * AdminCollections fail to import
 * Relationships are local
@@ -10,7 +10,7 @@ A Hydra Works](https://github.com/projecthydra-labs/hydra-works) based app for t
 
 All of these will be fixed prior to Avalon converting of course.
 
-== What Is Working
+## What Is Working
 
 * Descriptive Metadata is converted for all objects
 * DublinCore information is converted
@@ -18,7 +18,7 @@ All of these will be fixed prior to Avalon converting of course.
 * mhMetadata is converted for MasterFiles
 * encoding information is converted
 
-== To Set This Tester Up
+## To Set This Tester Up
 
 1. Clone this Repo
 1. Run `bundle install`
@@ -32,7 +32,7 @@ All of these will be fixed prior to Avalon converting of course.
 1. A migration report will be generated in `migration_report`
 1. As long as your terminal window with your Fedora 4 wrapper is open you can view the Fedora 4 instance at http://127.0.0.1:8984/rest
 
-== See Also
+## See Also
 
 This project is based on [Hydra Works](https://github.com/projecthydra-labs/hydra-works)
 
