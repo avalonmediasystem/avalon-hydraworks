@@ -124,8 +124,19 @@ class MediaObject < ActiveFedora::Base
     index.as :stored_searchable
   end
 
+  property :other_identifier, delegate_to: :descMetadata, at: [:other_identifier], multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :record_identifier, delegate_to: :descMetadata, at: [:record_identifier], multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :table_of_contents, delegate_to: :descMetadata, at: [:table_of_contents], multiple: true do |index|
+    index.as :stored_searchable, type: :string
+  end
+
   contains 'displayMetadata', class_name: 'ActiveFedora::SimpleDatastream' do |sds|
     sds.field :duration, :string
+    sds.field :avalon_resource_type, :string
   end
 
   contains 'sectionsMetadata', class_name:  'ActiveFedora::SimpleDatastream' do |sds|
@@ -136,6 +147,9 @@ class MediaObject < ActiveFedora::Base
     index.as :stored_searchable, type: :string
   end
   property :section_pid, delegate_to: :sectionsMetadata, multiple: true do |index|
+    index.as :stored_searchable, type: :string
+  end
+  property :avalon_resource_type, delegate_to: :displayMetadata, multiple: true do |index|
     index.as :stored_searchable, type: :string
   end
 
