@@ -27,7 +27,7 @@ class MediaObject < ActiveFedora::Base
   # belongs_to :governing_policy, class_name: 'Admin::Collection', predicate: ActiveFedora::RDF::ProjectHydra.isGovernedBy
   # belongs_to :collection, class_name: 'Admin::Collection', predicate: ActiveFedora::RDF::Fcrepo::RelsExt.isMemberOfCollection
 
-  # belongs_to :governing_policy, class_name: 'Admin::Collection', predicate: ActiveFedora::RDF::ProjectHydra.isGovernedBy
+  belongs_to :governing_policy, class_name: 'AdminCollection', predicate: ActiveFedora::RDF::ProjectHydra.isGovernedBy
   belongs_to :admin_collection, class_name: 'AdminCollection', predicate: ActiveFedora::RDF::Fcrepo::RelsExt.isMemberOfCollection
   has_many :parts, class_name: 'MasterFile', as: :mediaobject, predicate: ActiveFedora::RDF::Fcrepo::RelsExt.isPartOf
 
