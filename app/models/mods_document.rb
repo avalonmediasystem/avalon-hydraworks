@@ -12,14 +12,14 @@
 #   specific language governing permissions and limitations under the License.
 # ---  END LICENSE_HEADER BLOCK  ---
 
-require 'avalon/bib_retriever'
+# require 'avalon/bib_retriever'
 
 class ModsDocument < ActiveFedora::OmDatastream
 
   include ModsTemplates
   include ModsBehaviors
 
-  IDENTIFIER_TYPES = Avalon::ControlledVocabulary.find_by_name(:identifier_types) || {"other" => "Local"}
+  # IDENTIFIER_TYPES = Avalon::ControlledVocabulary.find_by_name(:identifier_types) || {"other" => "Local"}
 
   set_terminology do |t|
     t.root(:path=>'mods',
