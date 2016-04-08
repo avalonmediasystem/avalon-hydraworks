@@ -37,36 +37,88 @@ class MediaObject < ActiveFedora::Base
   property :avalon_uploader, delegate_to: :DC, at: [:creator], multiple: false do |index|
     index.as :stored_searchable
   end
-  # has_attributes :avalon_publisher, datastream: :DC, at: [:publisher], multiple: false
-  # # Delegate variables to expose them for the forms
-  # has_attributes :title, datastream: :descMetadata, at: [:main_title], multiple: false
-  # has_attributes :alternative_title, datastream: :descMetadata, at: [:alternative_title], multiple: true
-  # has_attributes :translated_title, datastream: :descMetadata, at: [:translated_title], multiple: true
-  # has_attributes :uniform_title, datastream: :descMetadata, at: [:uniform_title], multiple: true
-  # has_attributes :statement_of_responsibility, datastream: :descMetadata, at: [:statement_of_responsibility], multiple: false
-  # has_attributes :creator, datastream: :descMetadata, at: [:creator], multiple: true
-  # has_attributes :date_created, datastream: :descMetadata, at: [:date_created], multiple: false
-  # has_attributes :date_issued, datastream: :descMetadata, at: [:date_issued], multiple: false
-  # has_attributes :copyright_date, datastream: :descMetadata, at: [:copyright_date], multiple: false
-  # has_attributes :abstract, datastream: :descMetadata, at: [:abstract], multiple: false
-  # has_attributes :note, datastream: :descMetadata, at: [:note], multiple: true
-  # has_attributes :format, datastream: :descMetadata, at: [:media_type], multiple: false
-  # has_attributes :resource_type, datastream: :descMetadata, at: [:resource_type], multiple: true
+  property :avalon_publisher, delegate_to: :DC, at: [:publisher], multiple: false do |index|
+    index.as :stored_searchable
+  end
+
+  property :title, delegate_to: :descMetadata, at: [:main_title], multiple: false do |index|
+    index.as :stored_searchable
+  end
+  property :alternative_title, delegate_to: :descMetadata, at: [:alternative_title], multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :translated_title, delegate_to: :descMetadata, at: [:translated_title], multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :uniform_title, delegate_to: :descMetadata, at: [:uniform_title], multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :statement_of_responsibility, delegate_to: :descMetadata, at: [:statement_of_responsibility], multiple: false do |index|
+    index.as :stored_searchable
+  end
+  property :creator, delegate_to: :descMetadata, at: [:creator], multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :date_created, delegate_to: :descMetadata, at: [:date_created], multiple: false do |index|
+    index.as :stored_searchable
+  end
+  property :date_issued, delegate_to: :descMetadata, at: [:date_issued], multiple: false do |index|
+    index.as :stored_searchable
+  end
+  property :copyright_date, delegate_to: :descMetadata, at: [:copyright_date], multiple: false do |index|
+    index.as :stored_searchable
+  end
+  property :abstract, delegate_to: :descMetadata, at: [:abstract], multiple: false do |index|
+    index.as :stored_searchable
+  end
+  property :note, delegate_to: :descMetadata, at: [:note], multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :format, delegate_to: :descMetadata, at: [:media_type], multiple: false do |index|
+    index.as :stored_searchable
+  end
+  property :resource_type, delegate_to: :descMetadata, at: [:resource_type], multiple: true do |index|
+    index.as :stored_searchable
+  end
+
+
   # # Additional descriptive metadata
-  # has_attributes :contributor, datastream: :descMetadata, at: [:contributor], multiple: true
-  # has_attributes :publisher, datastream: :descMetadata, at: [:publisher], multiple: true
-  # has_attributes :genre, datastream: :descMetadata, at: [:genre], multiple: true
-  # has_attributes :subject, datastream: :descMetadata, at: [:topical_subject], multiple: true
-  # has_attributes :related_item_url, datastream: :descMetadata, at: [:related_item_url], multiple: true
-  #
-  # has_attributes :geographic_subject, datastream: :descMetadata, at: [:geographic_subject], multiple: true
-  # has_attributes :temporal_subject, datastream: :descMetadata, at: [:temporal_subject], multiple: true
-  # has_attributes :topical_subject, datastream: :descMetadata, at: [:topical_subject], multiple: true
-  # has_attributes :bibliographic_id, datastream: :descMetadata, at: [:bibliographic_id], multiple: false
-  #
-  # has_attributes :language, datastream: :descMetadata, at: [:language], multiple: true
-  # has_attributes :terms_of_use, datastream: :descMetadata, at: [:terms_of_use], multiple: false
-  # has_attributes :physical_description, datastream: :descMetadata, at: [:physical_description], multiple: false
+  property :contributor, delegate_to: :descMetadata, at: [:contributor], multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :publisher, delegate_to: :descMetadata, at: [:publisher], multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :genre, delegate_to: :descMetadata, at: [:genre], multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :subject, delegate_to: :descMetadata, at: [:topical_subject], multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :related_item_url, delegate_to: :descMetadata, at: [:related_item_url], multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :geographic_subject, delegate_to: :descMetadata, at: [:geographic_subject], multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :temporal_subject, delegate_to: :descMetadata, at: [:temporal_subject], multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :topical_subject, delegate_to: :descMetadata, at: [:topical_subject], multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :bibliographic_id, delegate_to: :descMetadata, at: [:bibliographic_id], multiple: false do |index|
+    index.as :stored_searchable
+  end
+  property :language, delegate_to: :descMetadata, at: [:language], multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :terms_of_use, delegate_to: :descMetadata, at: [:terms_of_use], multiple: false do |index|
+    index.as :stored_searchable
+  end
+  property :physical_description, delegate_to: :descMetadata, at: [:physical_description], multiple: false do |index|
+    index.as :stored_searchable
+  end
 
   contains 'displayMetadata', class_name: 'ActiveFedora::SimpleDatastream' do |sds|
     sds.field :duration, :string
