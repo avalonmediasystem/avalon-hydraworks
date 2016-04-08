@@ -5,7 +5,7 @@ A [Hydra Works](https://github.com/projecthydra-labs/hydra-works) based app for 
 ## Known Bugs
 
 * AdminCollections fail to import
-* Relationships are local
+* Relationships are lost
 * MasterFile labels are lost
 
 All of these will be fixed prior to Avalon converting of course.
@@ -13,10 +13,12 @@ All of these will be fixed prior to Avalon converting of course.
 ## What Is Working
 
 * Descriptive Metadata is converted for all objects
-* DublinCore information is converted
+* DublinCore information is exported from F3 to F4
 * Thumbnails and Posters are exported successfully
 * mhMetadata is converted for MasterFiles
 * encoding information is converted
+* captions are exported successfully
+
 
 ## To Set This Tester Up
 
@@ -31,6 +33,8 @@ All of these will be fixed prior to Avalon converting of course.
 1. In your original terminal window run `rake migrate`
 1. A migration report will be generated in `migration_report`
 1. As long as your terminal window with your Fedora 4 wrapper is open you can view the Fedora 4 instance at http://127.0.0.1:8984/rest
+
+Note: Objects are viewable through Fedora and Solr, but not the default Blacklight app reached via `rails s`
 
 ## See Also
 
